@@ -5,9 +5,6 @@ import math
 # Load the image
 image = cv2.imread("/photos/4x4_segmented.jpg")
 
-# Invert the image
-image = cv2.bitwise_not(image)
-
 # Convert to grayscale
 grayscale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -18,7 +15,7 @@ contours, hierarchy = cv2.findContours(grayscale, cv2.RETR_TREE, cv2.CHAIN_APPRO
 cv2.drawContours(image, contours, -1, (0, 0, 255), 2)
 
 # Process outer contour
-outer_contour = max(contours, key=cv2.contourArea)
+outer_contour = sorted(contours, key=cv2.contourArea)[-1]
 outer_bounding_box = cv2.boundingRect(outer_contour)
 cv2.rectangle(image, outer_bounding_box, (255, 0, 0), 2)
 
@@ -100,14 +97,27 @@ cv2.line(image, inner_bounding_box_N_point, inner_bounding_box_S_point, (0, 255,
 cv2.imwrite("/photos/4x4_final.jpg", image)
 
 # Calculate the outer values
-outer_w = distance(centriod(outer_E_contour), centriod(outer_W_contour))
-outer_h = distance(centriod(outer_N_contour), centriod(outer_S_contour))
+outer_w = distance(outer_bounding_box_E_point, outer_bounding_box_W_point)
+outer_w = max(outer_w, distance(outer_bounding_box_E_point, outer_bounding_box_W_point))
+outer_h = distance(outer_bounding_box_N_point, outer_bounding_box_S_point)
+outer_h = max(outer_h, distance(outer_bounding_box_N_point, outer_bounding_box_S_point))
 
 # Calculate the inner values
-inner_w = distance(centriod(inner_E_contour), centriod(inner_W_contour))
-inner_h = distance(centriod(inner_N_contour), centriod(inner_S_contour))
+inner_w = distance(inner_bounding_box_E_point, inner_bounding_box_W_point)
+inner_w = max(inner_w, distance(inner_bounding_box_E_point, inner_bounding_box_W_point))
+inner_h = distance(inner_bounding_box_N_point, inner_bounding_box_S_point)
+inner_h = max(inner_h, distance(inner_bounding_box_N_point, inner_bounding_box_S_point))
 
-print(f"outer_w: {outer_w:.2f}")
-print(f"outer_h: {outer_h:.2f}")
-print(f"inner_w: {inner_w:.2f}")
-print(f"inner_h: {inner_h:.2f}")
+print(f"outer_w: {int(outer_w)} px")
+print(f"outer_h: {int(outer_h)} px")
+print(f"inner_w: {int(inner_w)} px")
+print(f"inner_h: {int(inner_h)} px")
+
+width, height, _ = image.shape
+px_per_inch_x = width / 8
+px_per_inch_y = height / 8
+
+print(f"outer_w: {outer_w / px_per_inch_x:.2f} in")
+print(f"outer_h: {outer_h / px_per_inch_y:.2f} in")
+print(f"inner_w: {inner_w / px_per_inch_x:.2f} in")
+print(f"inner_h: {inner_h / px_per_inch_y:.2f} in")
