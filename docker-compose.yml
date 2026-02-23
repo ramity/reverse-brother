@@ -1,0 +1,10 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./docker/backend/Dockerfile
+    volumes:
+      - ./src:/app
+      - ./photos:/photos
+    container_name: reverse_brother_backend
+    image: reverse_brother_backend
