@@ -1,6 +1,6 @@
 # Reverse Brother
 
-![Brother 4x4 Hoop Pixel Measurements](docs/4x4_Pixel_Measurements.jpg)
+![Brother 4x4 Hoop Pixel Measurements](docs/4x4_pixel_measurements.jpg)
 
 A reverse engineering project for my mom.
 
@@ -10,6 +10,7 @@ A reverse engineering project for my mom.
 - [Process](#process)
   - [4x4 Inner/Outer Pixel Results](#4x4-innerouter-pixel-results)
   - [5x7 Inner/Outer Pixel Results](#5x7-innerouter-pixel-results)
+- [Related Brother Models](#related-brother-models)
 
 # Introduction
 
@@ -76,3 +77,14 @@ From there I computed the outer and inner width and height.
 | outer_h | 1754 | 5.93 |
 | inner_w | 1857 | 6.24 |
 | inner_h | 1501 | 5.07 |
+
+# Related Brother Models
+
+- https://www.printables.com/model/1098088-frame-embroidery-brother
+- https://www.printables.com/model/113832-embroidery-sock-frame
+- https://www.printables.com/model/461826-embroidery-sock-frame-for-brother-4in-10cm-hoop
+- https://www.printables.com/model/691978-brother-embroidery-inner-hoop
+- https://www.printables.com/model/463204-spinning-thread-holder-and-hoop-for-brother-embroi
+- https://www.printables.com/model/430164-sewing-machine-spool-holder-brand-brother
+- https://pinshape.com/items/7134-3d-printed-brother-embroidery-machine-5x7-inner-hoop
+- https://www.thingiverse.com/thing:4794785
