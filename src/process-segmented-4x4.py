@@ -72,24 +72,16 @@ cv2.circle(image, centriod(inner_W_contour), 10, (100, 255, 100), -1)
 # Draw outer lines
 cv2.line(image, centriod(outer_E_contour), centriod(outer_W_contour), (255, 100, 100), 2)
 cv2.line(image, centriod(outer_N_contour), centriod(outer_S_contour), (255, 100, 100), 2)
-cv2.line(image, centriod(outer_E_contour), centriod(outer_W_contour), (255, 100, 100), 2)
-cv2.line(image, centriod(outer_N_contour), centriod(outer_S_contour), (255, 100, 100), 2)
 
 # Draw inner lines
-cv2.line(image, centriod(inner_E_contour), centriod(inner_W_contour), (100, 255, 100), 2)
-cv2.line(image, centriod(inner_N_contour), centriod(inner_S_contour), (100, 255, 100), 2)
 cv2.line(image, centriod(inner_E_contour), centriod(inner_W_contour), (100, 255, 100), 2)
 cv2.line(image, centriod(inner_N_contour), centriod(inner_S_contour), (100, 255, 100), 2)
 
 # Draw outer lines
 cv2.line(image, outer_bounding_box_E_point, outer_bounding_box_W_point, (255, 0, 0), 2)
 cv2.line(image, outer_bounding_box_N_point, outer_bounding_box_S_point, (255, 0, 0), 2)
-cv2.line(image, outer_bounding_box_E_point, outer_bounding_box_W_point, (255, 0, 0), 2)
-cv2.line(image, outer_bounding_box_N_point, outer_bounding_box_S_point, (255, 0, 0), 2)
 
 # Draw inner lines
-cv2.line(image, inner_bounding_box_E_point, inner_bounding_box_W_point, (0, 255, 0), 2)
-cv2.line(image, inner_bounding_box_N_point, inner_bounding_box_S_point, (0, 255, 0), 2)
 cv2.line(image, inner_bounding_box_E_point, inner_bounding_box_W_point, (0, 255, 0), 2)
 cv2.line(image, inner_bounding_box_N_point, inner_bounding_box_S_point, (0, 255, 0), 2)
 
