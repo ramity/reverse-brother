@@ -14,7 +14,7 @@ RUN pip install pillow
 # RUN pip install torch torchvision
 RUN pip install tqdm
 # RUN pip install scikit-image
-# RUN pip install numpy-stl
+RUN pip install numpy-stl
 
 # OpenCV dependencies
 RUN apt install -y cmake g++ wget zip unzip
